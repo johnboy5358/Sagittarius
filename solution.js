@@ -36,6 +36,7 @@ const stringToNumber = pipe(
   Number
 )
 const mapConvertStringToNumber = map(stringToNumber)
+const onlyGreaterThan1000 = filter(x => x > 1000)
 
 
 readFile('Sagittarius.txt', 'utf8')
@@ -63,7 +64,7 @@ readFile('Sagittarius.txt', 'utf8')
   return data
 })
 .then(data => {
-  console.log(`Numbers > 1000: ${data.filter(x => x > 1000)}`)
+  console.log(`Numbers > 1000: ${onlyGreaterThan1000(data)}`)
   return data
 })
 .catch(err => {console.log(err.message)})
